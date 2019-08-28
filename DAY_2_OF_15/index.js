@@ -8,18 +8,14 @@ class ArrayUtilities {
     };
 
     static removeFirst = numbers => {
-        return numbers.filter((number, index) => index !== 0);
-    };
-
-    static sumAll = numbers => {
-        let result = 0;
-        numbers.forEach(val => (result += val));
-
+        const [, ...result] = numbers;
         return result;
     };
 
+    static sumAll = numbers => numbers.reduce((a, b) => a + b, 0);
+
     static divide = numbers => {
-        return numbers.toString().split("");
+        return [...numbers.toString()];
     };
 }
 

@@ -3,9 +3,7 @@ class ObjectUtilities {
         return { ...objA, ...objB };
     };
 
-    static removePassword = ({ ...user }) => {
-        let { password: _, ...cleanUser } = user;
-
+    static removePassword = ({ password, ...cleanUser }) => {
         return cleanUser;
     };
 
