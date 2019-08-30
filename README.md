@@ -27,3 +27,5 @@
 ### 5일차 (**진행중**) [[LINK]](https://github.com/alstn2468/ReactJS_Challenge/tree/master/DAY_5_OF_15) / [[DEMO]](https://codesandbox.io/s/day-four-boilerplate-ueu34)
 
 -   내가 사용한 기능
+
+`styled-components`, `axios`, `sorting`, `Prop-Types`
