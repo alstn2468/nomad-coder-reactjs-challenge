@@ -25,7 +25,9 @@ export default withRouter(({ location: { pathname } }) => (
             <Item selected={pathname === "/exchanges"}>
                 <Link to="/exchanges">Exchanges</Link>
             </Item>
-            <Item selected={pathname === "/coins"}>
+            <Item
+                selected={pathname === "/coins" || pathname.includes("/detail")}
+            >
                 <Link to="/coins">Coins</Link>
             </Item>
         </List>

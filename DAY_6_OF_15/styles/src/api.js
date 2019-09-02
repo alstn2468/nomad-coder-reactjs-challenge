@@ -13,5 +13,8 @@ export const exchangesApi = {
 };
 
 export const coinsApi = {
-    getCoins: () => api.get("coins")
+    getCoins: () => api.get("coins"),
+    getCoinsDetail: id => api.get(`coins/${id}`),
+    getCoinsExchanges: id => api.get(`coins/${id}/exchanges`),
+    getCoinsMarkets: id => api.get(`coins/${id}/markets`)
 };

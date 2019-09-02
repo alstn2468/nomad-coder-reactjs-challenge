@@ -14,23 +14,18 @@ const CoinsPresenter = ({ results, error, loading }) => (
         ) : error ? (
             <Message message={error} color="red" />
         ) : (
-            results.map(result => (
-                <Coins
-                    name={result.name}
-                    symbol={result.symbol}
-                    rank={result.rank}
-                />
-            ))
+            results.map(result => <Coins key={result.id} {...result} />)
         )}
     </Container>
 );
 
 CoinsPresenter.propTypes = {
-    results: PropTypes.objectOf(
+    results: PropTypes.arrayOf(
         PropTypes.shape({
-            name: PropTypes.string,
-            symbol: PropTypes.string,
-            rank: PropTypes.number
+            id: PropTypes.string.isRequired,
+            name: PropTypes.string.isRequired,
+            symbol: PropTypes.string.isRequired,
+            rank: PropTypes.number.isRequired
         })
     ),
     error: PropTypes.string,

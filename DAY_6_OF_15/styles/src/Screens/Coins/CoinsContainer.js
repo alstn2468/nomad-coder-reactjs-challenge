@@ -4,7 +4,7 @@ import { coinsApi } from "../../api";
 
 export default class extends React.Component {
     state = {
-        results: null,
+        results: [],
         error: null,
         loading: true
     };
