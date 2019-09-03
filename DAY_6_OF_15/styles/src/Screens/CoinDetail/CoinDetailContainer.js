@@ -24,7 +24,6 @@ export default class extends React.Component {
         try {
             this.setState({ loading: true });
             ({ data: result } = await coinsApi.getCoinsDetail(id));
-            console.log(result);
         } catch {
             error = "Can't get coin detail";
         } finally {
@@ -33,13 +32,14 @@ export default class extends React.Component {
     }
 
     render() {
-        const { result, error, loading } = this.state;
+        const { result, error, loading, pathname } = this.state;
 
         return (
             <CoinDetailPresenter
                 result={result}
                 error={error}
                 loading={loading}
+                pathname={pathname}
             />
         );
     }

@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import PropTypes from "prop-types";
+import { Link } from "react-router-dom";
 
 const Button = styled.button`
     width: 120px;
@@ -17,12 +18,15 @@ const Button = styled.button`
     }
 `;
 
-const DetailButton = ({ name }) => (
-    <Button onClick={() => console.log(`${name} clicked`)}>{name}</Button>
+const DetailButton = ({ name, path }) => (
+    <Link to={path}>
+        <Button onClick={() => console.log(`${name} clicked`)}>{name}</Button>
+    </Link>
 );
 
 DetailButton.propTypes = {
-    name: PropTypes.string.isRequired
+    name: PropTypes.string.isRequired,
+    path: PropTypes.string.isRequired
 };
 
 export default DetailButton;

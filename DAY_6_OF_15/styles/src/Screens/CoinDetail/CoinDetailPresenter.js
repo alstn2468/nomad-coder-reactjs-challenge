@@ -28,8 +28,14 @@ const CoinDetailPresenter = ({ result, error, loading }) => (
             <>
                 <Detail {...result} />
                 <ButtonContainer>
-                    <DetailButton name="MARKETS" />
-                    <DetailButton name="EXCHANGES" />
+                    <DetailButton
+                        name="MARKETS"
+                        path={`/detail/${result.id}/markets`}
+                    />
+                    <DetailButton
+                        name="EXCHANGES"
+                        path={`/detail/${result.id}/exchanges`}
+                    />
                 </ButtonContainer>
                 <ButtonResultsContainer></ButtonResultsContainer>
             </>

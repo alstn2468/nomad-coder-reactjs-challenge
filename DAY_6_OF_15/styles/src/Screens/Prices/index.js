@@ -1,3 +1,3 @@
-import PricesContainer from "./PricesContainer.js";
+import PricesContainer from "./PricesContainer";
 
 export default PricesContainer;

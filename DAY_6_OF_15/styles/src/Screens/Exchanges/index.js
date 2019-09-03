@@ -1,3 +1,3 @@
-import ExchangesContainer from "./ExchangesContainer.js";
+import ExchangesContainer from "./ExchangesContainer";
 
 export default ExchangesContainer;

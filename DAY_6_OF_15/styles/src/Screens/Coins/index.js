@@ -1,3 +1,3 @@
-import CoinsContainer from "./CoinsContainer.js";
+import CoinsContainer from "./CoinsContainer";
 
 export default CoinsContainer;
