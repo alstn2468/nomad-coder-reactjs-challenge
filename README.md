@@ -30,8 +30,8 @@
 
 `styled-components`, `axios`, `sorting`, `Prop-Types`
 
-### 6일차 (**진행중**) [[LINK]](https://github.com/alstn2468/ReactJS_Challenge/tree/master/DAY_6_OF_15) / [[DEMO]]()
+### 6일차 (**완료**) [[LINK]](https://github.com/alstn2468/ReactJS_Challenge/tree/master/DAY_6_OF_15) / [[DEMO]](https://rtd0x.csb.app/#/)
 
 -   내가 사용한 기능
 
-`styled-components`, `axios`, `sorting`, `Prop-Types`
+`styled-components`, `axios`,  `Prop-Types`, `react-router-dom` ...etc

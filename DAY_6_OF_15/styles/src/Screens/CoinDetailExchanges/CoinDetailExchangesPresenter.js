@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import styled from "styled-components";
 import Loader from "../../Components/Loader";
 
-const Column = styled.div`
+const Container = styled.div`
     display: flex;
     flex-direction: column;
     margin: 10px 0px;
@@ -25,7 +25,7 @@ const CoinDetailExchangesPresenter = ({ loading, exchanges }) => {
         <Loader />
     ) : (
         exchanges.map((exchange, idx) => (
-            <Column key={idx}>
+            <Container key={idx}>
                 {exchange.name && <Name>{exchange.name}</Name>}
                 {exchange.fiats && exchange.fiats.length !== 0 && (
                     <Pay>
@@ -33,7 +33,7 @@ const CoinDetailExchangesPresenter = ({ loading, exchanges }) => {
                         pay on {exchange.fiats.map(val => `${val.symbol} `)}
                     </Pay>
                 )}
-            </Column>
+            </Container>
         ))
     );
 };
