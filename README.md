@@ -36,4 +36,6 @@
 
 `styled-components`, `axios`, `Prop-Types`, `react-router-dom` ...etc
 
-## 7일차 (**진행중**) [[LINK]](https://github.com/alstn2468/ReactJS_Challenge/tree/master/DAY_7) / [[DEMO]]()
+## 7일차 (**완료**) [[LINK]](https://github.com/alstn2468/ReactJS_Challenge/tree/master/DAY_7) / [[DEMO]]()
+
+`useState`, `useEffect` in `React`

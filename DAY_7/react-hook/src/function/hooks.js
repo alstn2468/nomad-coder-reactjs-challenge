@@ -1,9 +1,9 @@
 import { useState, useEffect } from "react";
 
 export const useDeviceOrientation = () => {
-    const [alpha, setAlpha] = useState("null");
-    const [beta, setBeta] = useState("null");
-    const [gamma, setGamma] = useState("null");
+    const [alpha, setAlpha] = useState("0");
+    const [beta, setBeta] = useState("0");
+    const [gamma, setGamma] = useState("0");
     const handleOrientation = e => {
         const { alpha, beta, gamma } = e;
         setAlpha(alpha);
@@ -15,12 +15,12 @@ export const useDeviceOrientation = () => {
     return { alpha, beta, gamma };
 };
 
-export const useFavicon = initialfaviconUrl => {
+export const useFavicon = initialFaviconUrl => {
     const setFavicon = () => {
         const link = document.head.querySelectorAll("link")[1];
         link.type = "image/x-icon";
         link.rel = "shortcut icon";
-        link.href = initialfaviconUrl;
+        link.href = initialFaviconUrl;
         document.getElementsByTagName("head")[0].appendChild(link);
     };
 
@@ -50,13 +50,13 @@ export const useGeolocation = () => {
 
 export const useKeyPressed = key => {
     const [isPressed, setIsPressed] = useState(false);
-    const handleKeypressed = e => {
+    const handleKeyPressed = e => {
         key === e.key ? setIsPressed(true) : setIsPressed(false);
     };
 
     useEffect(() => {
-        document.addEventListener("keypress", handleKeypressed);
-        return () => document.removeEventListener("keypress", handleKeypressed);
+        document.addEventListener("keypress", handleKeyPressed);
+        return () => document.removeEventListener("keypress", handleKeyPressed);
     }, []);
 
     return isPressed;
