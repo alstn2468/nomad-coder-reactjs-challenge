@@ -1,41 +1,7 @@
-## React.js Challenge with Nomad Coder
+## Nomad Coder ReactJS Challenge
+[![MIT License](https://img.shields.io/badge/license-MIT-blue.svg)](https://opensource.org/licenses/MIT)
+[![Generic badge](https://img.shields.io/github/languages/top/alstn2468/ReactJS_Challenge)](https://shields.io/)
 
-### 1일차 (**완료**) [[LINK]](https://github.com/alstn2468/ReactJS_Challenge/tree/master/DAY_1) / [[DEMO]](https://6fo2i.csb.app/)
+### Author : [Kim Minsu](https://github.com/alstn2468)<br/>[ [Facebook](https://www.facebook.com/profile.php?id=100003769223078) ] [ [Github](https://github.com/alstn2468) ] [ [LinkedIn](https://www.linkedin.com/in/minsu-kim-336289160/) ] [ [Blog](https://alstn2468.github.io/) ]<br/>
 
--   내가 사용한 기능
-
-`Arrow Function`, `Spread Operator`, `Rest Operator`
-
-### 2일차 (**완료**) [[LINK]](https://github.com/alstn2468/ReactJS_Challenge/tree/master/DAY_2) / [[DEMO]](https://8ysoh.csb.app/)
-
--   내가 사용한 기능
-
-`Arror Function`, `map`, `filter`, `forEach`
-
-### 3일차 (**완료**) [[LINK]](https://github.com/alstn2468/ReactJS_Challenge/tree/master/DAY_3) / [[DEMO]](https://ob2m2.csb.app/)
-
--   내가 사용한 기능
-
-(`HashRouter`, `Route`, `Switch`, `Link`, `Redirect`) in `react-router-dom`
-
-### 4일차 (**완료**) [[LINK]](https://github.com/alstn2468/ReactJS_Challenge/tree/master/DAY_4) / [[DEMO]](https://ueu34.csb.app/)
-
--   내가 사용한 기능
-
-`styled-components` , `styled-reset` `createGlobalStyle`
-
-### 5일차 (**완료**) [[LINK]](https://github.com/alstn2468/ReactJS_Challenge/tree/master/DAY_5) / [[DEMO]](https://cei0i.csb.app/)
-
--   내가 사용한 기능
-
-`styled-components`, `axios`, `sorting`, `Prop-Types`
-
-### 6일차 (**완료**) [[LINK]](https://github.com/alstn2468/ReactJS_Challenge/tree/master/DAY_6) / [[DEMO]](https://rtd0x.csb.app/#/)
-
--   내가 사용한 기능
-
-`styled-components`, `axios`, `Prop-Types`, `react-router-dom` ...etc
-
-## 7일차 (**완료**) [[LINK]](https://github.com/alstn2468/ReactJS_Challenge/tree/master/DAY_7) / [[DEMO]]()
-
-`useState`, `useEffect` in `React`
+This Repository quoted by [Nomad Coder](https://academy.nomadcoders.co)'s course.
