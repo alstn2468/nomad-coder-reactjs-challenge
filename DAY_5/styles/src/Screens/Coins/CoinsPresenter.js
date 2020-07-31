@@ -11,8 +11,9 @@ const CoinsPresenter = ({ results, error, loading }) => (
         {loading ? (
             <Loader />
         ) : (
-            results.map(result => (
+            results.map((result, idx) => (
                 <Coins
+                    key={result.name + idx}
                     name={result.name}
                     symbol={result.symbol}
                     rank={result.rank}
@@ -23,15 +24,15 @@ const CoinsPresenter = ({ results, error, loading }) => (
 );
 
 CoinsPresenter.propTypes = {
-    results: PropTypes.objectOf(
+    results: PropTypes.arrayOf(
         PropTypes.shape({
             name: PropTypes.string,
             symbol: PropTypes.string,
-            rank: PropTypes.number
+            rank: PropTypes.number,
         })
     ),
     error: PropTypes.string,
-    loading: PropTypes.bool.isRequired
+    loading: PropTypes.bool.isRequired,
 };
 
 export default CoinsPresenter;

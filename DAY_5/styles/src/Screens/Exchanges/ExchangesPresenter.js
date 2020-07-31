@@ -11,11 +11,12 @@ const ExchangesPresenter = ({ results, error, loading }) => (
         {loading ? (
             <Loader />
         ) : (
-            results.map(result => (
+            results.map((result, idx) => (
                 <Exchange
+                    key={result.name + idx}
                     name={result.name}
                     description={result.description}
-                    website={result.links.website}
+                    website={result.links ? result.links.website : "No website"}
                 />
             ))
         )}
@@ -23,15 +24,15 @@ const ExchangesPresenter = ({ results, error, loading }) => (
 );
 
 ExchangesPresenter.propTypes = {
-    results: PropTypes.objectOf(
+    results: PropTypes.arrayOf(
         PropTypes.shape({
             name: PropTypes.string,
             description: PropTypes.string,
-            website: PropTypes.string
+            website: PropTypes.string,
         })
     ),
     error: PropTypes.string,
-    loading: PropTypes.bool.isRequired
+    loading: PropTypes.bool.isRequired,
 };
 
 export default ExchangesPresenter;
