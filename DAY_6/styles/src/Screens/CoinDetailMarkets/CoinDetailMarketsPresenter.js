@@ -7,8 +7,8 @@ const CoinDetailMarketsPresenter = ({ loading, markets }) => {
     return loading ? (
         <Loader />
     ) : (
-        markets.map(market => (
-            <Market name={market.exchange_name} key={market.id} />
+        markets.map((market, idx) => (
+            <Market name={market.exchange_name} key={idx} />
         ))
     );
 };
@@ -17,9 +17,9 @@ CoinDetailMarketsPresenter.propTypes = {
     loading: PropTypes.bool.isRequired,
     markets: PropTypes.arrayOf(
         PropTypes.shape({
-            exchange_name: PropTypes.string.isRequired
+            exchange_name: PropTypes.string.isRequired,
         })
-    ).isRequired
+    ).isRequired,
 };
 
 export default CoinDetailMarketsPresenter;

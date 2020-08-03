@@ -24,7 +24,7 @@ const NoMedal = styled.div`
 
 const Content = styled.div`
     font-size: 16px;
-    font-weight: ${props => (props.rank <= 3 ? 600 : null)};
+    font-weight: ${(props) => (props.rank <= 3 ? 600 : null)};
 `;
 
 const Coins = ({ id, rank, symbol, name }) => (
@@ -62,7 +62,7 @@ Coins.propTypes = {
     id: PropTypes.string.isRequired,
     rank: PropTypes.number.isRequired,
     symbol: PropTypes.string.isRequired,
-    name: PropTypes.number.isRequired
+    name: PropTypes.string.isRequired,
 };
 
 export default Coins;

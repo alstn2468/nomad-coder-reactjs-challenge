@@ -45,7 +45,7 @@ const Message = ({
     org_structure,
     proof_type,
     rank,
-    symbol
+    symbol,
 }) => (
     <Container>
         <CoinInfoContainer>
@@ -94,13 +94,13 @@ const Message = ({
 );
 
 Message.propTypes = {
-    name: PropTypes.string.isRequired,
+    name: PropTypes.string,
     description: PropTypes.string,
-    open_source: PropTypes.bool.isRequired,
+    open_source: PropTypes.bool,
     org_structure: PropTypes.string,
     proof_type: PropTypes.string,
     rank: PropTypes.number,
-    symbol: PropTypes.string
+    symbol: PropTypes.string,
 };
 
 export default Message;

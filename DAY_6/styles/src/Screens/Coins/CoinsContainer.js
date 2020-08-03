@@ -6,7 +6,7 @@ export default class extends React.Component {
     state = {
         results: [],
         error: null,
-        loading: true
+        loading: true,
     };
 
     sortJSON(data, key) {
@@ -17,26 +17,24 @@ export default class extends React.Component {
         });
     }
 
-    async componentDidMount() {
-        let results, error;
+    getCoins = async () => {
         try {
-            ({ data: results } = await coinsApi.getCoins());
-            results = this.sortJSON(
-                results.filter(result => result.rank !== 0),
-                "rank"
-            );
-        } catch {
-            error = "Can't get Coin results.";
+            const { data: results } = await coinsApi.getCoins();
+            this.setState({
+                results,
+            });
+        } catch (e) {
+            console.log(e);
         } finally {
-            this.setState({ results, error, loading: false });
+            this.setState({ loading: false });
         }
+    };
+
+    componentDidMount() {
+        this.getCoins();
     }
 
     render() {
-        const { results, error, loading } = this.state;
-
-        return (
-            <CoinsPresenter results={results} error={error} loading={loading} />
-        );
+        return <CoinsPresenter {...this.state} />;
     }
 }

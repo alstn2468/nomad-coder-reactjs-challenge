@@ -20,13 +20,13 @@ const Button = styled.button`
 
 const DetailButton = ({ name, path }) => (
     <Link to={path}>
-        <Button onClick={() => console.log(`${name} clicked`)}>{name}</Button>
+        <Button>{name}</Button>
     </Link>
 );
 
 DetailButton.propTypes = {
     name: PropTypes.string.isRequired,
-    path: PropTypes.string.isRequired
+    path: PropTypes.string.isRequired,
 };
 
 export default DetailButton;

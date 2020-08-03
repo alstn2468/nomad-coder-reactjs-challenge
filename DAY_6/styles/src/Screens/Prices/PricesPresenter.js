@@ -14,8 +14,9 @@ const PricesPresenter = ({ results, error, loading }) => (
         ) : error ? (
             <Message message={error} color="red" />
         ) : (
-            results.map(result => (
+            results.map((result, idx) => (
                 <Price
+                    key={idx}
                     name={result.name}
                     symbol={result.symbol}
                     price={result.quotes.USD.price}
@@ -26,15 +27,15 @@ const PricesPresenter = ({ results, error, loading }) => (
 );
 
 PricesPresenter.propTypes = {
-    results: PropTypes.objectOf(
+    results: PropTypes.arrayOf(
         PropTypes.shape({
             name: PropTypes.string,
             symbol: PropTypes.string,
-            price: PropTypes.number
+            price: PropTypes.number,
         })
     ),
     error: PropTypes.string,
-    loading: PropTypes.bool.isRequired
+    loading: PropTypes.bool.isRequired,
 };
 
 export default PricesPresenter;

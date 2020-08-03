@@ -4,31 +4,27 @@ import { exchangesApi } from "../../api";
 
 export default class extends React.Component {
     state = {
-        results: null,
+        results: [],
         error: null,
-        loading: true
+        loading: true,
     };
 
-    async componentDidMount() {
-        let results, error;
+    getExchanges = async () => {
         try {
-            ({ data: results } = await exchangesApi.getExchanges());
-        } catch {
-            error = "Can't get exchange results.";
+            const { data: results } = await exchangesApi.getExchanges();
+            this.setState({ results });
+        } catch (e) {
+            console.log(e);
         } finally {
-            this.setState({ results, error, loading: false });
+            this.setState({ loading: false });
         }
+    };
+
+    componentDidMount() {
+        this.getExchanges();
     }
 
     render() {
-        const { results, error, loading } = this.state;
-
-        return (
-            <ExchangesPresenter
-                results={results}
-                error={error}
-                loading={loading}
-            />
-        );
+        return <ExchangesPresenter {...this.state} />;
     }
 }

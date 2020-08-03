@@ -5,17 +5,17 @@ import CoinDetailExchangesPresenter from "./CoinDetailExchangesPresenter";
 class CoinDetailExchangesContainer extends React.Component {
     state = {
         loading: true,
-        exchanges: []
+        exchanges: [],
     };
 
-    getExchanges = async id => {
+    getExchanges = async (id) => {
         try {
             let { data: exchanges } = await coinsApi.getCoinsExchanges(id);
             exchanges = exchanges.filter(
-                exchange => exchange.fiats.length !== 0
+                (exchange) => exchange.fiats.length !== 0
             );
             this.setState({
-                exchanges
+                exchanges,
             });
         } catch (e) {
             console.log(e);
@@ -27,14 +27,13 @@ class CoinDetailExchangesContainer extends React.Component {
     componentDidMount() {
         const {
             match: {
-                params: { id }
-            }
+                params: { id },
+            },
         } = this.props;
         this.getExchanges(id);
     }
 
     render() {
-        console.log(this.state.exchanges);
         return <CoinDetailExchangesPresenter {...this.state} />;
     }
 }

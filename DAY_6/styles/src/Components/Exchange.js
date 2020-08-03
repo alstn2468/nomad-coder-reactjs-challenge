@@ -18,24 +18,41 @@ const Description = styled.p`
     margin: 20px 0px;
 `;
 
-const Website = styled.a``;
+const Links = styled.div`
+    margin-top: 15px;
+`;
 
-const Exchange = ({ name, description, website }) => (
+const Link = styled.a`
+    text-decoration: underline;
+    display: block;
+`;
+
+const Exchange = ({ name, description, links }) => (
     <Container>
         <Title>{name}</Title>
         <Description>
             {description
-                ? `${description.substring(0, 86)}...`
+                ? `${description.substring(0, 80)}...`
                 : "No Description"}
         </Description>
-        <Website>{website ? website : "No Website"}</Website>
+        <Links>
+            {links &&
+                links.website &&
+                links.website.map((w, i) => (
+                    <Link key={i} href={w}>
+                        {w}
+                    </Link>
+                ))}
+        </Links>
     </Container>
 );
 
 Exchange.propTypes = {
     name: PropTypes.string.isRequired,
     description: PropTypes.string,
-    website: PropTypes.string
+    links: PropTypes.shape({
+        website: PropTypes.arrayOf(PropTypes.string.isRequired),
+    }),
 };
 
 export default Exchange;

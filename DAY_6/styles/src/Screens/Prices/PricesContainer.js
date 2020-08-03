@@ -4,31 +4,28 @@ import { pricesApi } from "../../api";
 
 export default class extends React.Component {
     state = {
-        results: null,
-        error: null,
-        loading: true
+        loading: true,
+        prices: [],
     };
 
-    async componentDidMount() {
-        let results, error;
-        try {
-            ({ data: results } = await pricesApi.getPrices());
-        } catch {
-            error = "Can't get price results.";
-        } finally {
-            this.setState({ results, error, loading: false });
-        }
+    componentDidMount() {
+        this.getPrices();
     }
 
-    render() {
-        const { results, error, loading } = this.state;
+    getPrices = async () => {
+        try {
+            const { data: results } = await pricesApi.getPrices();
+            this.setState({
+                results,
+            });
+        } catch (e) {
+            console.log(e);
+        } finally {
+            this.setState({ loading: false });
+        }
+    };
 
-        return (
-            <PricesPresenter
-                results={results}
-                error={error}
-                loading={loading}
-            />
-        );
+    render() {
+        return <PricesPresenter {...this.state} />;
     }
 }
