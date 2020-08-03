@@ -44,18 +44,16 @@ const CoinDetailPresenter = ({ result, error, loading }) => (
 );
 
 CoinDetailPresenter.propTypes = {
-    result: PropTypes.objectOf(
-        PropTypes.shape({
-            id: PropTypes.string,
-            name: PropTypes.string,
-            description: PropTypes.string,
-            open_source: PropTypes.bool,
-            org_structure: PropTypes.string,
-            proof_type: PropTypes.string,
-            rank: PropTypes.number,
-            symbol: PropTypes.string,
-        })
-    ),
+    result: PropTypes.shape({
+        id: PropTypes.string,
+        name: PropTypes.string,
+        description: PropTypes.string,
+        open_source: PropTypes.bool,
+        org_structure: PropTypes.string,
+        proof_type: PropTypes.string,
+        rank: PropTypes.number,
+        symbol: PropTypes.string,
+    }),
     error: PropTypes.string,
     loading: PropTypes.bool.isRequired,
 };
