@@ -9,15 +9,15 @@ import {
     useLocalStorage,
     useMousePosition,
     useOnline,
-    useLockScroll
-} from "./function/hooks";
+    useLockScroll,
+} from "./hooks";
 
 function App() {
     const { alpha, beta, gamma } = useDeviceOrientation();
     const setFavicon = useFavicon("https://www.google.com/favicon.ico");
     const {
         coords: { latitude, longitude },
-        error
+        error,
     } = useGeolocation();
     const mPressed = useKeyPressed("m");
     const iPressed = useKeyPressed("i");
