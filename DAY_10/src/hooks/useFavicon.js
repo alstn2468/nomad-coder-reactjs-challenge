@@ -8,7 +8,6 @@ const useFavicon = (initialFaviconUrl) => {
     };
 
     useEffect(() => {
-        console.log(url);
         const link = document.head.querySelectorAll("link")[1];
         link.type = "image/x-icon";
         link.rel = "shortcut icon";
