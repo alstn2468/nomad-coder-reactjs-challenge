@@ -39,7 +39,12 @@ function App() {
             </ul>
 
             <h2>useFavicon</h2>
-            <button onClick={setFavicon}>change Favicon</button>
+            <button onClick={() => setFavicon()}>INITIAL FAVICON</button>
+            <button
+                onClick={() => setFavicon("https://www.naver.com/favicon.ico")}
+            >
+                NAVER
+            </button>
 
             <h2>useGeolocation</h2>
             <ul>
